@@ -1,7 +1,7 @@
-Тестовое приложение на курсах JS Advanced 2017.
+Test application Javascript Advanced 2017
 
-Используется React, webpack
+How to use
 
-
-
-# dergaeva.es-trainapp
+1. Go to root directory and run npm i
+2. Run npm start
+3. Open dist/index.html
