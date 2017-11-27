@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e161c18f-b1b1-4252-b54b-e69b918e6e80" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/header/number/Number.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/header/number/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/header/number/number.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/header/welcome/Welcome.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/header/welcome/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/header/welcome/welcome.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/aside/Aside.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/aside/aside.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/content/Content.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/content/content.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/content/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/counter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/person.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/statusMessage/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/statusMessage/statusMessage.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/navigation.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dergaeva.es-trainapp.iml" afterPath="$PROJECT_DIR$/.idea/dergaeva.es-trainapp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/dergaeva_es_trainapp_node_modules.xml" afterPath="$PROJECT_DIR$/.idea/libraries/dergaeva_es_trainapp_node_modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.js" afterPath="$PROJECT_DIR$/src/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="dergaeva.es-trainapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -202,10 +176,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="436" />
-    <option name="y" value="33" />
+    <option name="x" value="341" />
+    <option name="y" value="111" />
     <option name="width" value="1396" />
-    <option name="height" value="929" />
+    <option name="height" value="808" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -361,15 +335,15 @@
       <workItem from="1511369715116" duration="8858000" />
       <workItem from="1511469982931" duration="2404000" />
       <workItem from="1511606521026" duration="6992000" />
-      <workItem from="1511811233503" duration="8560000" />
+      <workItem from="1511811233503" duration="9124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49732000" />
+    <option name="totallyTimeSpent" value="50296000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="436" y="33" width="1396" height="929" extended-state="0" />
+    <frame x="341" y="111" width="1396" height="808" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -379,7 +353,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29986963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35603714" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
