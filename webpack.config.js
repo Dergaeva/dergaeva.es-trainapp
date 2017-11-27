@@ -9,24 +9,14 @@ let styleLoader = ['style-loader', 'css-loader', 'sass-loader'];
 const plugins = [
     new htmlPlugin({
         template: 'index.html'
-}),
+    }),
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
-    //new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new textPlugin({
+        filename: 'main-[contenthash].css',
+        allChunks: true
+    })
 ];
-
-if (args.env && args.env.style) {
-    plugins.push(
-        new textPlugin({
-            filename: 'main-[contenthash].css',
-            allChunks: true
-        })
-    );
-
-    styleLoader = textPlugin.extract({
-        fallback: "style-loader",
-        use: ["css-loader", "sass-loader"]
-    });
-}
 
 module.exports = {
     entry: {
@@ -46,13 +36,20 @@ module.exports = {
                 exclude: path.resolve(__dirname, 'node_modules'),
                 use: {
                     loader: 'babel-loader',
-                    options: { presets: ['env', 'react'] }
+                    options: {
+                        presets: ['env', 'react'],
+                        plugins: ['transform-class-properties']
+                    }
+
                 }
             },
 
             {
                 test: /\.s?css$/,
-                use: styleLoader
+                use: textPlugin.extract({
+                    fallback: "style-loader",
+                    use: ["css-loader", "sass-loader"]
+                })
 
             }
         ],
@@ -60,12 +57,11 @@ module.exports = {
 
     plugins,
 
-    devtool: 'source-map'
+    devtool: 'source-map',
 
-    // devServer: {
-    //     contentBase: path.resolve(__dirname, 'dist'),
-    //     publicPath: '/',
-    //     port: 9000,
-    //     hot: !(args.env && args.env.style)
-    // }
+    devServer: {
+        contentBase: path.resolve(__dirname, 'dist'),
+        publicPath: '/',
+        port: 9000
+    }
 };
