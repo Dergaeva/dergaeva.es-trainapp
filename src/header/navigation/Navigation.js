@@ -30,18 +30,24 @@ export const Navigation = (islogin) => {
 
 
 export const Nav = (props) => {
+    if (props.list) {
     return (
     <nav className="main-nav">
          <ul>
-             {
-                 props.list.map((items, ind) => (
-                     <li  key={ind}>
-                         <a href={`/${items.toLowerCase()}`}>{items}</a>
-                     </li>
-                 ))
-             }
+            {
+                     props.list.map((items, ind) => (
+                         <li  key={ind}>
+                             <a href={`/${items.toLowerCase()}`}>{items}</a>
+                         </li>
+                     ))
+                 }
          </ul>
      </nav>
-    );
+    );}
+    else {
+        return (
+            <h3>Don't have menu</h3>
+        )
+    }
 };
 
