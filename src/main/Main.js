@@ -31,7 +31,7 @@ export class Main extends React.Component {
     fetch('https://jsonplaceholder.typicode.com/userList')
       .then(response => response.json())
       .then(users => this.setState({ users, loading: false }));
-  }
+  };
 
   showUserInfo(user) {
     alert(`${user.email}: ${user.phone}`)
@@ -42,7 +42,7 @@ export class Main extends React.Component {
       <section className="main-content">
         <Content />
         <Aside />
-        <StatusMessage {...getProps()} />
+        <StatusMessage  {...getProps()} text='Good day!' />
         <Counter />
         <button onClick={this.getUsers}>
           Get users
