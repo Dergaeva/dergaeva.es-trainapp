@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Dergaeva/dergaeva.es-trainapp#readme",
   "dependencies": {
+    "classnames": "^2.2.5",
     "react": "^16.1.1",
     "react-dom": "^16.1.1"
   },

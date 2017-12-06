@@ -1,0 +1,13 @@
+.article {
+  .btn {
+    display: block;
+    padding: 15px;
+  }
+  .active {
+    background: #fff;
+    color: red;
+  }
+  .hidden {
+    display: none;
+  }
+}

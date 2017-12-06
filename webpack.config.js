@@ -15,6 +15,9 @@ const plugins = [
     new textPlugin({
         filename: 'main-[contenthash].css',
         allChunks: true
+    }),
+    new webpack.ProvidePlugin({
+      Component: ['react', 'Component']
     })
 ];
 

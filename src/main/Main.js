@@ -1,9 +1,10 @@
 import React from 'react';
 
-import {Content} from './content';
-import {Aside} from './aside';
-import {StatusMessage} from '../statusMessage';
-import {Counter} from './counter';
+import { Content } from './content';
+import { Aside } from './aside';
+import { StatusMessage } from '../statusMessage';
+import { Counter } from './counter';
+import { Button } from '../button';
 
 
 import './main.scss';
@@ -19,12 +20,20 @@ export const List = (props) => {
   return props.numered ? <ol>{items}</ol> : <ul>{items}</ul>;
 };
 
+export const Post = (props) => {
+  const items = props.post
+    .map(item => <li key={item.id} >{item[props.title]}{item[props.field]}</li>);
+  return props.numered ? <ol>{items}</ol> : <ul>{items}</ul>;
+};
 
 export class Main extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {users: []};
+    this.state = {
+      users: [],
+      post: []
+    };
     this.getUsers();
   }
 
@@ -34,9 +43,18 @@ export class Main extends React.Component {
       .then(users => this.setState({users}));
   }
 
-  onUserClick(user) {
-    alert(`${user.name}'s phone is ${user.phone}`);
+  getPost() {
+      // ?userId=1
+    fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
+      .then(response => response.json())
+      .then(post => this.setState({post}));
   }
+
+  // onUserClick(user, post) {
+  //   this.getPost();
+  //   // alert(`${user.name}'s phone is ${user.phone}`);
+  //   // this.setState(`{post}`);
+  // }
 
   render() {
     return (
@@ -48,10 +66,16 @@ export class Main extends React.Component {
         <button onClick={this.getUsers}>
           Get users
         </button>
+        <Button />
         {loading && <span>Loading ...</span>}
-        <List list={this.state.users} field="name" click={this.onUserClick}/>
+        {/*<List list={this.state.users} field="name" click={() => this.getPost(users)} />*/}
+        <List list={this.state.users}  field="name" click={this.getPost} />
+        <div className="posts">
+          <h3>Posts</h3>
+          <Post post={this.state.post} field="body" title="title"/>
+        </div>
       </main>
     );
-    const {users, loading} = this.state;
+    const {users,post, loading} = this.state;
   }
 }
