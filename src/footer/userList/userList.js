@@ -15,8 +15,8 @@ export const Username = (props) => {
 export const ListComponentName = (props) => {
   return (
     <div className="name">
-      <Username fName='Dergaieva'  lName='Elena' age='30' />
       <ul>{
-        props.usersList.map(user => <li key={user.id}>{user.fName} {user.lName} {user.age}</li>)
-      }</ul></div>
+        props.usersList.map(user => <li key={user.id}><Username fName={user.fName}  lName={user.lName} age={user.age} /></li>)
+      }</ul>
+    </div>
 )};
