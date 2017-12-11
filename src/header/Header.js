@@ -1,20 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import { Navigation } from './navigation';
+
 import { Nav } from './navigation';
 import { Welcome } from './welcome';
-import { Numbers} from './number';
+import { Lifecyrcle } from '../lifecyrcle';
+
 
 import './header.scss';
 
-export class Header extends Component {
+export class Header extends React.Component  {
     render() {
         return (
             <header className="header">
                 <Welcome name= "Елена" />
-                <Navigation islogin />
                 <Nav list={['Home', 'Products', 'Contacts']} />
-                <Numbers from="5" to="7" even />
+                <Lifecyrcle />
+
             </header>
         )
     }
