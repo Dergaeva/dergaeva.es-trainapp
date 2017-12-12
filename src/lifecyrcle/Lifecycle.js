@@ -14,15 +14,15 @@ export class Lifecyrcle extends Component {
 
   render() {
     const {counter, show} = this.state;
-
     return (
       <div>
         <button onClick={() => this.setState({counter: counter +1})}>Inc</button>
-        <span className="count-text">{this.state.counter}</span>
-        <br /><br />
-        <button onClick={() => this.setState({show: !show})}>
-          {show ? 'Destroy' : 'Create'}
-        </button>
+
+          <span className="count-text">{this.state.counter}</span>
+          <br /><br />
+          <button onClick={() => this.setState({show: !show})}>
+            {show ? 'Destroy' : 'Create'}
+          </button>
 
         {show && <Mount code={counter} />}
       </div>

@@ -11,8 +11,6 @@ export class Main extends React.Component {
     return (
       <main className="main-content">
         <Clock />
-
-
       </main>
     );
   }
