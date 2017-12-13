@@ -15,6 +15,9 @@ const plugins = [
     new textPlugin({
         filename: 'main-[contenthash].css',
         allChunks: true
+    }),
+    new webpack.ProvidePlugin({
+      React: 'react'
     })
 ];
 
@@ -31,7 +34,13 @@ module.exports = {
 
     module: {
         rules: [
-            {
+          // {
+          //   enforce: 'pre',
+          //   test: /src.*\.js$/,
+          //   exclude: /node_modules/,
+          //   loader: 'eslint-loader'
+          // },
+          {
                 test: /\.js$/,
                 exclude: path.resolve(__dirname, 'node_modules'),
                 use: {

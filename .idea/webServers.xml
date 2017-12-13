@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6228ecaf-cb75-4749-b71c-b2a79bd3d5b8" name="deptaxi.kz" url="http://deptax00.ftp.tools">
+        <fileTransfer host="deptax00.ftp.tools" port="21" password="dfc9dfe9dffcdf9fdfe0dfe8dfdcdfd0" username="deptax00_ftp">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
