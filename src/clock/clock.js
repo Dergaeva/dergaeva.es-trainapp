@@ -4,7 +4,7 @@ import './clock.scss';
 export class Clock extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {date: new Date()};
+    this.state = { date: new Date() };
   }
 
   componentDidMount() {
@@ -27,7 +27,7 @@ export class Clock extends React.Component {
   render() {
     return (
       <div>
-        <h2>Time and date <br/>
+        <h2>Time and date <br />
           {this.state.date.toLocaleString()}.
         </h2>
       </div>
