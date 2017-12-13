@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,OAAQ;EACN,OAAO,EAAE,KAAK;EACd,MAAM,EAAE,CAAC;EACT,UAAU,EAAE,IAAI;EAChB,UAAU,EAAE,KAAK;EACjB,KAAK,EAAE,IAAI;EACX,SAAS,EAAE,IAAI;EACf,OAAO,ECTQ,IAAI;;ADWrB,KAAM;EACJ,OAAO,EAAE,KAAK;EACd,KAAK,EAAE,IAAI",
+"sources": ["lifecyrcle.scss","../variables.scss"],
+"names": [],
+"file": "lifecyrcle.css"
+}

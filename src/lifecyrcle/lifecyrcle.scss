@@ -1,0 +1,16 @@
+@import "../variables";
+
+
+.header {
+  display: block;
+  margin: 0;
+  list-style: none;
+  background: white;
+  color: #000;
+  font-size: 18px;
+  padding: $common-padding;
+}
+.name {
+  display: block;
+  width: 100%;
+}
