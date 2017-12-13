@@ -17,7 +17,7 @@ const plugins = [
         allChunks: true
     }),
     new webpack.ProvidePlugin({
-      React: 'react'
+      Component: ['react', 'Component']
     })
 ];
 

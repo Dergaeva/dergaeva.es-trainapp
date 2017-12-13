@@ -7,6 +7,7 @@
     "React": true,
     "PropTypes": true,
     "$": true
+    "Component": true
   },
   "rules": {
     "max-len": [2, 120, 2],
