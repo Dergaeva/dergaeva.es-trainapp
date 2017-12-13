@@ -115,4 +115,5 @@ typings/
 .env
 
 dist/
-package-lock.json
+package-lock.json'.idea'
+.idea

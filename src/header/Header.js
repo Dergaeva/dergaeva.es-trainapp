@@ -14,7 +14,7 @@ export class Header extends Component {
                 <Welcome name= "Елена" />
                 <Navigation islogin />
                 <Nav list={['Home', 'Products', 'Contacts']} />
-                <Numbers from="5" to="7" />
+                <Numbers from="5" to="7" even />
             </header>
         )
     }

@@ -1,9 +1,30 @@
 import './footer.scss';
 
-import { Username } from './userList';
+import { ListComponentName } from './userList';
+
+const users =  [
+  {
+    fName: "Gortovskiy",
+    lName: "Oleg",
+    age: "50",
+    id: 1
+  },
+  {
+    fName: "Ivanova",
+    lName: "Olga",
+    age: "40",
+    id: 2
+  },
+  {
+    fName: "Trydgg",
+    lName: "Olena",
+    age: "30",
+    id: 3
+  },
+];
 
 export const Footer = () => (
   <footer className="footer">
-    <Username fName='Dergaieva' lName='Elena' age='30' />
+    <ListComponentName usersList={users} />
   </footer>
 );
