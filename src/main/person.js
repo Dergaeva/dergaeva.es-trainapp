@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import PropTypes from 'prop-types';
 
@@ -17,7 +17,7 @@ Persons.defaultProps = {
   users: []
 };
 
-const userType = PropTypes.shape ({
+const userType = PropTypes.shape({
   age: PropTypes.number,
   name: PropTypes.string
 });

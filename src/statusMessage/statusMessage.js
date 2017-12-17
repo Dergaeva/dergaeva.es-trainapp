@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 
-console.log(PropTypes );
+console.log(PropTypes);
 
 const ErrorMessage = props => (
-  <mark style={{color: 'red'}}>
+  <mark style={{ color: 'red' }}>
     {props.text || 'Error!'}
   </mark>
 );
 
 const SuccessMessage = props => (
-  <mark style={{color: 'green'}}>
+  <mark style={{ color: 'green' }}>
     {props.text || 'Success!'}
   </mark>
 );
@@ -21,7 +21,7 @@ export const StatusMessage = (props) => {
   return <ErrorMessage />;
 };
 
-
-StatusMessage.propTypes = {
-  text: PropTypes.string.isRequired
-};
+//
+// StatusMessage.propTypes = {
+//   text: PropTypes.string.isRequired
+// };

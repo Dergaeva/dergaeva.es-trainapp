@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { Component } from 'react';
 
 import './mount.scss';
 
@@ -12,7 +11,6 @@ export class Mount extends Component {
     };
   }
 
-
   updateStatus(e) {
     this.setState({
       status: this.state.status + '+'
@@ -20,8 +18,6 @@ export class Mount extends Component {
 
     e.preventDefault();
   }
-
-
 
   render() {
     let color = 'white';
@@ -35,9 +31,7 @@ export class Mount extends Component {
     if ((inc % 2 === 0) && (inc % 5 === 0)) {
       color = 'turquoise';
     }
-
     return (
-
       <div id="mount" className={color}>
         <span>
           The code from props is {this.props.code}<br/>
@@ -46,6 +40,5 @@ export class Mount extends Component {
         <a href="" onClick={this.updateStatus}>Update status</a>
       </div>
     );
-  }
-
-};
+  };
+}

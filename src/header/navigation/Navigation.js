@@ -11,7 +11,7 @@ export const Navigation = (islogin) => {
     <nav className="main-nav">
       <ul>
         {
-          items.map((item, index) => (
+          items.map((item) => (
             <li key={item.id}>
               <a href={`/${item.label.toLowerCase()}`}>{item.label}</a>
             </li>
@@ -21,7 +21,6 @@ export const Navigation = (islogin) => {
 
       <ul>
         <li><a href="/home">Portfolio</a></li>
-
         {islogin && <li><a href="/logout">Logout</a></li>}
       </ul>
     </nav>
@@ -46,9 +45,7 @@ export const Nav = (props) => {
     );
   }
   else {
-    return (
-      <h3>Don't have menu</h3>
-    )
+    return <h3>Don't have menu</h3>
   }
 };
 

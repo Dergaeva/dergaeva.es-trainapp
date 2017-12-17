@@ -3,23 +3,23 @@ import './footer.scss';
 
 import { ListComponentName } from './userList';
 
-const users =  [
+const users = [
   {
-    fName: "Gortovskiy",
-    lName: "Oleg",
-    age: "50",
+    fName: 'Gortovskiy',
+    lName: 'Oleg',
+    age: '50',
     id: 1
   },
   {
-    fName: "Ivanova",
-    lName: "Olga",
-    age: "40",
+    fName: 'Ivanova',
+    lName: 'Olga',
+    age: '40',
     id: 2
   },
   {
-    fName: "Trydgg",
-    lName: "Olena",
-    age: "30",
+    fName: 'Trydgg',
+    lName: 'Olena',
+    age: '30',
     id: 3
   },
 ];

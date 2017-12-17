@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
-import {Clock} from '../clock';
+import { Clock } from '../clock';
 
 import './main.scss';
 

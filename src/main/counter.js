@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React, {Component } from 'react';
 
 export class Counter extends Component {
   constructor(props) {
     super(props);
-    this.state = {counter: 0};
+    this.state = { counter: 0 };
   }
 
   clickHandler = () => {
-    this.setState({counter: this.state.counter + 1});
+    this.setState({ counter: this.state.counter + 1 });
     // this.setState(prev => ({counter: prev.counter + 1}));
   };
 
@@ -24,16 +24,14 @@ export class Counter extends Component {
 }
 
 
-
-
-export class Counter extends Component {
-  constructor() {
-    super(); //Component.call(this)
-    this.counter = 0;
-  }
-
-  clickHandler = (event) => {
-    this.counter++;
-    console.log(this.counter);
-  }
-}
+// export class Counter extends Component {
+//   constructor() {
+//     super(); //Component.call(this)
+//     this.counter = 0;
+//   }
+//
+//   clickHandler = (event) => {
+//     this.counter++;
+//     console.log(this.counter);
+//   }
+// }
