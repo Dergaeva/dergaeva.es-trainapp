@@ -7,17 +7,13 @@ export const Welcome = ({ name }) => {
   let text;
   if (hr >= 22 || hr <= 3) {
     text = 'Good night';
-  }
-  else if (hr > 3 || hr <= 12) {
+  } else if (hr > 3 || hr <= 12) {
     text = 'Good morning';
-  }
-  else if (hr > 12 || hr <= 18) {
+  } else if (hr > 12 || hr <= 18) {
     text = 'Good afternoon';
-  }
-  else if (hr > 18 || hr < 22) {
+  } else if (hr > 18 || hr < 22) {
     text = 'Good evening';
-  }
-  else {
+  } else {
     text = 'What time is it';
   }
   return <h2>{text} {name}</h2>;

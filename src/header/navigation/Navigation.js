@@ -6,29 +6,27 @@ const items = [
   { label: 'Shop', id: 'dfgdfgdfg' }
 ];
 
-export const Navigation = (islogin) => {
-  return (
-    <nav className="main-nav">
-      <ul>
-        {
-          items.map((item) => (
-            <li key={item.id}>
-              <a href={`/${item.label.toLowerCase()}`}>{item.label}</a>
-            </li>
-          ))
-        }
-      </ul>
+export const Navigation = islogin => (
+  <nav className="main-nav">
+    <ul>
+      {
+        items.map(item => (
+          <li key={item.id}>
+            <a href={`/${item.label.toLowerCase()}`}>{item.label}</a>
+          </li>
+        ))
+      }
+    </ul>
 
-      <ul>
-        <li><a href="/home">Portfolio</a></li>
-        {islogin && <li><a href="/logout">Logout</a></li>}
-      </ul>
-    </nav>
-  );
-};
+    <ul>
+      <li><a href="/home">Portfolio</a></li>
+      {islogin && <li><a href="/logout">Logout</a></li>}
+    </ul>
+  </nav>
+);
 
 
-export const Nav = (props) => {
+export const Nav = props => ({
   if (props.list) {
     return (
       <nav className="main-nav">
@@ -44,8 +42,6 @@ export const Nav = (props) => {
       </nav>
     );
   }
-  else {
-    return <h3>Don't have menu</h3>
-  }
-};
+  return <h3>Don't have menu</h3>
+})
 

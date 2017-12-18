@@ -1,7 +1,7 @@
 import './number.scss';
 
 
-export const Numbers = ({ from, to, odd, even }) => {
+export const Numbers = (from, to, odd, even) => {
   let arr = [];
 
   for (let i = from; i <= to; i++) {
@@ -16,7 +16,7 @@ export const Numbers = ({ from, to, odd, even }) => {
   return (
     <ul>
       {
-        arr.map((item, index) => <li key={ index }>{ item }</li>)
+        arr.map((item, index) => <li key={index}>{item}</li>)
       }
     </ul>
   );

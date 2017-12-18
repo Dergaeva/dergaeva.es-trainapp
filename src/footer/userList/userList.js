@@ -20,9 +20,8 @@ export const ListComponentName = props => (
             age={user.age}
           />
         </li>
-      )
-      )
-    }
+      ))
+  }
     </ul>
   </div>
 );

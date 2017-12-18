@@ -1,7 +1,5 @@
-import PropTypes from 'prop-types';
-
-console.log(PropTypes);
-
+// import PropTypes from 'prop-types';
+// console.log(PropTypes);
 const ErrorMessage = props => (
   <mark style={{ color: 'red' }}>
     {props.text || 'Error!'}
@@ -15,7 +13,8 @@ const SuccessMessage = props => (
 );
 
 export const StatusMessage = (props) => {
-  if (props.hasOwnProperty('valid')) {
+  /* delete hasOwnProperty */
+  if (props('valid')) {
     return <SuccessMessage />;
   }
   return <ErrorMessage />;
