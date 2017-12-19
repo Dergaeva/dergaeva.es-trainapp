@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 import './navigation.scss';
 
 const items = [
@@ -12,7 +14,11 @@ export const Navigation = (islogin) => {
         {
           items.map((item, index) => (
             <li key={item.id}>
-              <a href={`/${item.label.toLowerCase()}`}>{item.label}</a>
+              <NavLink
+                activeClassName="active"
+                to={`/${item.label.toLowerCase()}`}>
+                {item.label}
+              </NavLink>
             </li>
           ))
         }

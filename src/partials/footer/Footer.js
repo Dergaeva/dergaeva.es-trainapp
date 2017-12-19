@@ -1,9 +1,8 @@
 import './footer.scss';
 
-import { Username } from './userList';
 
 export const Footer = () => (
   <footer className="footer">
-    <Username fName='Dergaieva' lName='Elena' age='30' />
+    <img src="images/1.jpg" alt="flower" />
   </footer>
 );

@@ -4,6 +4,10 @@ const htmlPlugin = require('html-webpack-plugin');
 const textPlugin = require('extract-text-webpack-plugin');
 const args = require('yargs').argv;
 
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const images = ['jpg', 'jpeg', 'png', 'gif', 'svg'];
+
 let styleLoader = ['style-loader', 'css-loader', 'sass-loader'];
 
 const plugins = [
@@ -17,8 +21,18 @@ const plugins = [
         allChunks: true
     }),
     new webpack.ProvidePlugin({
-      React: 'react'
-    })
+      React: 'react',
+      $: 'jquery',
+      PropTypes: 'prop-types'
+    }),
+  new CopyWebpackPlugin([
+    ...images.map(ext => (
+    {
+      from: `**/*.${ext}`,
+      to: 'images/[name].[ext]'
+    }
+    ))
+  ])
 ];
 
 module.exports = {
@@ -28,9 +42,17 @@ module.exports = {
     },
     context: path.resolve(__dirname, 'src'),
     output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, 'dist')
+      filename: '[name].js',
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: '/'
     },
+
+  resolve: {
+    modules: [
+      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'node_modules')
+    ]
+  },
 
     module: {
         rules: [
@@ -71,6 +93,7 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
         publicPath: '/',
-        port: 9000
+        port: 9000,
+        historyApiFallback: true
     }
 };
