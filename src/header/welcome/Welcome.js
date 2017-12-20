@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import './welcome.scss';
 
@@ -18,3 +19,6 @@ export const Welcome = ({ name }) => {
   }
   return <h2>{text} {name}</h2>;
 };
+
+Welcome.propTypes = { name: PropTypes.string };
+Welcome.defaultProps = { name: 'Гость' };

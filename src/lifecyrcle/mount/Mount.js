@@ -11,7 +11,7 @@ export class Mount extends Component {
   }
   updateStatus(e) {
     this.setState({
-      status: this.state.status + '+'
+      status: `${this.state.status}+`
     });
     e.preventDefault();
   }

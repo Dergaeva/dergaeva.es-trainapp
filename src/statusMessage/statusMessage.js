@@ -1,5 +1,3 @@
-// import PropTypes from 'prop-types';
-// console.log(PropTypes);
 const ErrorMessage = props => (
   <mark style={{ color: 'red' }}>
     {props.text || 'Error!'}
@@ -19,8 +17,3 @@ export const StatusMessage = (props) => {
   }
   return <ErrorMessage />;
 };
-
-//
-// StatusMessage.propTypes = {
-//   text: PropTypes.string.isRequired
-// };

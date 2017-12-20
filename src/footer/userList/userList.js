@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import React from 'react';
 import './userList.scss';
 
@@ -25,3 +27,10 @@ export const ListComponentName = props => (
     </ul>
   </div>
 );
+
+Username.propTypes = {
+  fName: PropTypes.string.isRequired,
+  lName: PropTypes.string.isRequired,
+  age: PropTypes.string.isRequired
+};
+

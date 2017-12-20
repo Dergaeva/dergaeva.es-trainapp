@@ -1,6 +1,5 @@
 import './number.scss';
 
-
 export const Numbers = (from, to, odd, even) => {
   let arr = [];
 
@@ -21,3 +20,4 @@ export const Numbers = (from, to, odd, even) => {
     </ul>
   );
 };
+

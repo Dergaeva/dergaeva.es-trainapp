@@ -26,7 +26,7 @@ export const Navigation = islogin => (
 );
 
 
-export const Nav = props => ({
+export const Nav = (props) => {
   if (props.list) {
     return (
       <nav className="main-nav">
@@ -42,6 +42,6 @@ export const Nav = props => ({
       </nav>
     );
   }
-  return <h3>Don't have menu</h3>
-})
+  return <h3>Don&lsquo;t have menu</h3>;
+};
 
