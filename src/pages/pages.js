@@ -1,27 +1,27 @@
-import React, { Component } from 'react';
-
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-
-import { Main } from '../partials/main'
-import { Login } from '../pages/login'
+import { TaskList } from './TaskList';
+import { Main } from '../partials/main';
+import { Login } from '../pages/login';
+import { Task } from '../pages/Task';
 
 export class Pages extends Component {
   constructor(p) {
     super(p);
 
-    this.state = { isLogin: false, isLoading: false };
+    this.state = { isLoading: false };
   }
 
   onLogin = (data) => {
     this.setState({ isLoading: true });
     setTimeout(() => {
-      this.setState({ isLogin: true });
+      this.props.setLoginState(data);
+      this.setState({ isLoading: false });
     }, 1000);
   }
 
   render() {
-    if (!this.state.isLogin) {
+    if (!this.props.login) {
       return (
         <Switch>
           <Route
@@ -37,10 +37,9 @@ export class Pages extends Component {
       <Switch>
         <Route path="/" exact component={Main} />
         <Route path="/home" exact component={Main} />
+        <Route path="/tasks" exact component={TaskList} />
+        <Route path="/tasks/:task" component={Task} />
         <Redirect from="/login" to="/" />
-
-
-
       </Switch>
     );
   }

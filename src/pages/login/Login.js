@@ -7,4 +7,3 @@ export const Login = (props) => (
       submit={props.login}
     />
 );
-

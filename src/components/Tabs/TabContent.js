@@ -1,4 +1,4 @@
-export const TabContent = ({children}) => (
+export const TabContent = ({ children }) => (
   <section className="tab-content">
     {children}
   </section>
