@@ -1,3 +1,4 @@
+import React from 'react';
 import './number.scss';
 
 export const Numbers = (from, to, odd, even) => {
