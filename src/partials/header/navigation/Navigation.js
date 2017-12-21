@@ -1,10 +1,14 @@
 import React from 'react';
+
+import { NavLink } from 'react-router-dom';
+
 import './navigation.scss';
 
 const items = [
   { label: 'Blog', id: 'fgfgfgfg' },
   { label: 'Shop', id: 'dfgdfgdfg' }
 ];
+
 
 export const Navigation = islogin => (
   <nav className="main-nav">
@@ -17,7 +21,6 @@ export const Navigation = islogin => (
         ))
       }
     </ul>
-
     <ul>
       <li><a href="/home">Portfolio</a></li>
       {islogin && <li><a href="/logout">Logout</a></li>}

@@ -1,17 +1,17 @@
 import React from 'react';
 
 
-import { Header } from './header';
-import { Main } from './main';
-import { Footer } from './footer';
+import { Header } from './partials/header';
+import { Footer } from './partials/footer';
+import { Pages } from './pages';
+
 import './app.scss';
 
 
-export const App = (
+export const App = () => (
   <div>
     <Header />
-    <br />
-    <Main />
+       <Pages />
     <Footer />
   </div>
 );

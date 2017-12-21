@@ -1,6 +1,7 @@
 import React from 'react';
 import './footer.scss';
 
+
 import { ListComponentName } from './userList';
 
 const users = [
@@ -27,5 +28,6 @@ const users = [
 export const Footer = () => (
   <footer className="footer">
     <ListComponentName usersList={users} />
+    <img src="images/1.jpg" alt="flower" />
   </footer>
 );
