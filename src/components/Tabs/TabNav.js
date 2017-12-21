@@ -21,7 +21,3 @@ export const TabNav = ({ children, select, activeIndex }) =>
     </nav>
   );
 
-TabNav.propTypes = {
-  click: PropTypes.func.isRequired,
-  list: PropTypes.array.isRequired
-};
