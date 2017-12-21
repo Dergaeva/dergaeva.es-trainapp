@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import { TaskList } from '../components/TaskList';
+
 import { Main } from '../partials/main'
 import { Login } from '../pages/login'
 
@@ -37,8 +37,6 @@ export class Pages extends Component {
       <Switch>
         <Route path="/" exact component={Main} />
         <Route path="/home" exact component={Main} />
-        <Route path="/tasks" component={TaskList} />
-
         <Redirect from="/login" to="/" />
 
 

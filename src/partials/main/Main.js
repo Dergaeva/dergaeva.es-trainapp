@@ -69,6 +69,7 @@ export class Main extends React.Component {
         Hello
           <button onClick={() => this.updateModal(false)}>Close</button>
         </ReactModal>
+        <Tabs />
       </section>
     );
     const { users, loading } = this.state;
