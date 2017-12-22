@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const TabNav = ({ children, select, activeIndex }) =>
   (<nav className="nav-tab">
     <ul>
@@ -24,3 +26,4 @@ export const TabNav = ({ children, select, activeIndex }) =>
 TabNav.propTypes = {
   select: PropTypes.func.isRequired
 };
+

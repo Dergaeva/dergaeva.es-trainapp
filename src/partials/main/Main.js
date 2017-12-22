@@ -4,9 +4,10 @@ import ReactModal from 'react-modal';
 import { StatusMessage } from 'components/statusMessage';
 import { Tabs, Tab, Tablink, TabNav, TabContent } from 'components/Tabs';
 import { Form } from 'components/form';
+import { TaskList } from 'pages/TaskList';
+
 
 import './main.scss';
-
 
 const tabs = [
   { id: 0, title: 'Tab-1', content: 'Some text is here' },
@@ -69,9 +70,11 @@ export class Main extends React.Component {
         Hello
           <button onClick={() => this.updateModal(false)}>Close</button>
         </ReactModal>
-
+      <TaskList />
+      <Tabs />
       </section>
     );
     const { users, loading } = this.state;
   }
 }
+

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { TabContent, Tab, Tablink, TabNav } from './';
 
 import './tab.scss';
@@ -13,6 +14,7 @@ export class Tabs extends React.Component {
   }
 
   render() {
+
     const tabs = this.props.children
       .filter(child => child.type === Tab)
       .reduce((prev, next) => [...prev, ...next.props.children], []);
@@ -22,7 +24,6 @@ export class Tabs extends React.Component {
     // [{Tablink}, {Tablink}]
     const tabContents = tabs.filter(tab => tab.type === TabContent);
     // [{TabContent}, {TabContent}]
-
     return (
       <div className='tabs'>
         <TabNav
@@ -36,3 +37,7 @@ export class Tabs extends React.Component {
     );
   }
 }
+
+
+Tabs.propTypes = { tabs: PropTypes.array };
+Tabs.defaultProps = { tabs: [] };
