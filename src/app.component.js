@@ -1,6 +1,7 @@
 import { Header } from './partials/header';
 import { Footer } from './partials/footer';
 import { Pages } from './pages';
+import { checkUser } from 'services/userService';
 
 import './app.scss';
 
@@ -9,29 +10,37 @@ export class App extends Component {
     super(props);
 
     this.state = {
-      login: false
+      user: null
     };
   }
 
-  setLoginState = (login) => {
-    this.setState({ login });
+  componentDidMount() {
+    checkUser()
+      .then(user => this.setLoginState(user))
+      .catch(() => this.setLoginState(false))
   }
 
+  setLoginState = (user) => {
+    this.setState({ user });
+  };
+
   render() {
-    const { login } = this.state;
+    const { user } = this.state;
 
     return (
       <div className="wrapper">
         <Header
-          login={login}
+          user={user}
           setLoginState={this.setLoginState}
         />
 
-        <Pages
-          data={login}
-          setLoginState={this.setLoginState}
-        />
-
+        {
+          user !== null ?
+          <Pages
+            user={user}
+            setLoginState={this.setLoginState}
+          /> : <div>Loading ... </div>
+        }
         <Footer />
       </div>
     );

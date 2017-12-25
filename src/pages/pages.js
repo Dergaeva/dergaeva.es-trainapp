@@ -5,8 +5,8 @@ import { Main } from '../partials/main';
 import { Login } from '../pages/login';
 import { Task } from '../pages/Task';
 
-export const Pages = ({ data, setLoginState }) => {
-  if (!data) {
+export const Pages = ({ user, setLoginState }) => {
+  if (!user) {
     return (
       <Switch>
         <Route
@@ -18,7 +18,7 @@ export const Pages = ({ data, setLoginState }) => {
     );
   }
 
-  const main = () => <Main name={data.email} />;
+  const main = () => <Main name={user.firstName} />;
 
   return (
     <Switch>

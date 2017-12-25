@@ -1,8 +1,7 @@
-const BASE_URL = 'https://jsonplaceholder.typicode.com/';
+const BASE_URL = 'http://localhost:8081/';
 
 export const request = (url = '', type = 'get', data = null) => $.ajax({
   type,
-  //url: 'http://localhost:8081/public/login',
   url: `${BASE_URL}${url}`,
   data,
   xhrFields: {

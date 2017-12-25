@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Tabs, Tablink, Tab, TabContent } from 'components/Tabs/index';
 
-const days = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+const days = [, 'Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
 
 export class TaskList extends Component {
   constructor(props) {

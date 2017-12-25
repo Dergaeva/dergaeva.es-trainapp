@@ -5,46 +5,40 @@ import { NavLink } from 'react-router-dom';
 import './navigation.scss';
 
 const items = [
-  { label: 'Blog', id: 'fgfgfgfg' },
-  { label: 'Shop', id: 'dfgdfgdfg' }
+  { label: 'Home', id: 'home' },
+  { label: 'Tasks', id: 'tasks', auth: true },
+  { label: 'User', id: 'user'},
+  { label: 'Register new', id: 'registernew', nonauth: true }
 ];
 
 
-export const Navigation = islogin => (
-  <nav className="main-nav">
-    <ul>
-      {
-        items.map(item => (
-          <li key={item.id}>
-            <a href={`/${item.label.toLowerCase()}`}>{item.label}</a>
-          </li>
-        ))
+export const Navigation = ({ user }) => {
+  let filteredItems = items.filter(item => !item.auth);
+
+  if (user) { 
+    filteredItems = items.filter(item => !item.nonauth);
+  }
+
+  return (
+    <nav className="main-nav">
+      <ul>
+        {
+          filteredItems
+            .map(item => (
+            <li
+              key={item.id}
+              className="item"
+            >
+              <NavLink
+                activeClassName="active"
+                to={`/${item.label.toLowerCase()}`}
+              >
+                {item.label}
+              </NavLink>
+            </li>
+          ))
       }
     </ul>
-    <ul>
-      <li><a href="/home">Portfolio</a></li>
-      {islogin && <li><a href="/logout">Logout</a></li>}
-    </ul>
   </nav>
-);
-
-
-export const Nav = (props) => {
-  if (props.list) {
-    return (
-      <nav className="main-nav">
-        <ul>
-          {
-            props.list.map((items, ind) => (
-              <li key={ind}>
-                <a href={`/${items.toLowerCase()}`}>{items}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
-    );
-  }
-  return <h3>Don&lsquo;t have menu</h3>;
-};
+)};
 

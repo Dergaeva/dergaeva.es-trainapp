@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
+import { getTaskInfo } from 'services/userService';
 
 import { StatusMessage } from 'components/statusMessage';
 import { Tabs, Tab, Tablink, TabNav, TabContent } from 'components/Tabs';
@@ -37,8 +38,14 @@ export class Main extends React.Component {
     this.state = {
       users: [],
       loading: false,
-      openModal: false
+      openModal: false,
+      info: null
     };
+  }
+
+  componentDidMount() {
+    getTaskInfo()
+      .then(info => this.setState({ info }));
   }
 
   getUsers = () => {
@@ -63,6 +70,17 @@ export class Main extends React.Component {
     return (
       <section className="main-content">
         <div>Hello, {this.props.name}</div>
+
+        {
+          this.state.info &&
+        <article>
+          <p>You have 10 tasks</p>
+          <p>Done:>Done: 3</p>
+          <p>In progress: 1</p>
+          <p>Waiting:>Waiting: 5</p>
+        </article>
+        }
+
         <ReactModal
           isOpen={this.state.openModal}
           contentLabel="Minimal modal example"

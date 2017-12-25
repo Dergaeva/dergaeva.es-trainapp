@@ -3,7 +3,6 @@ import { login } from 'services/userService';
 
 export const Login = props => {
   const loginUser = (data) => {
-    console.log(data);
     login(data)
       .then(data => props.login(data))
       .catch(console.log);
@@ -15,6 +14,7 @@ export const Login = props => {
       <Form
         exclude={['firstname', 'secondname', 'repeat password']}
         submit={loginUser}
+        data={props.user}
       />
   );
 };
