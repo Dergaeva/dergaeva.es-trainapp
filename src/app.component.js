@@ -1,6 +1,6 @@
-import {Header} from './partials/header';
-import {Footer} from './partials/footer';
-import {Pages} from './pages';
+import { Header } from './partials/header';
+import { Footer } from './partials/footer';
+import { Pages } from './pages';
 
 import './app.scss';
 
@@ -10,15 +10,15 @@ export class App extends Component {
 
     this.state = {
       login: false
-    }
+    };
   }
 
   setLoginState = (login) => {
-    this.setState({login});
+    this.setState({ login });
   }
 
   render() {
-    const {login} = this.state;
+    const { login } = this.state;
 
     return (
       <div className="wrapper">
@@ -28,7 +28,7 @@ export class App extends Component {
         />
 
         <Pages
-          login={login}
+          data={login}
           setLoginState={this.setLoginState}
         />
 
@@ -37,3 +37,4 @@ export class App extends Component {
     );
   }
 }
+

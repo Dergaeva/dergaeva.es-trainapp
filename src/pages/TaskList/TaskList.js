@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Tabs, Tablink, Tab, TabContent } from 'components/Tabs/index';
 
-const days = ['Пн', 'Вт', 'Ср'];
+const days = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 
 export class TaskList extends Component {
   constructor(props) {
@@ -15,7 +15,6 @@ export class TaskList extends Component {
   render() {
     return (
       <Tabs>
-
         {
           days.map((day) => (
             <Tab key={day}>

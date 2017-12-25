@@ -1,9 +1,20 @@
 import { Form } from 'components/Form';
+import { login } from 'services/userService';
 
-export const Login = (props) => (
-  props.isLoading ? <mark>Loading...</mark> :
-    <Form
-      exclude={['firstname', 'secondname', 'repeat password']}
-      submit={props.login}
-    />
-);
+export const Login = props => {
+  const loginUser = (data) => {
+    console.log(data);
+    login(data)
+      .then(data => props.login(data))
+      .catch(console.log);
+
+  };
+
+  return (
+    props.isLoading ? <mark>Loading...</mark> :
+      <Form
+        exclude={['firstname', 'secondname', 'repeat password']}
+        submit={loginUser}
+      />
+  );
+};

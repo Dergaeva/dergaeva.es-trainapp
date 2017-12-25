@@ -62,6 +62,7 @@ export class Main extends React.Component {
   render() {
     return (
       <section className="main-content">
+        <div>Hello, {this.props.name}</div>
         <ReactModal
           isOpen={this.state.openModal}
           contentLabel="Minimal modal example"
@@ -71,7 +72,7 @@ export class Main extends React.Component {
           <button onClick={() => this.updateModal(false)}>Close</button>
         </ReactModal>
       <TaskList />
-      <Tabs />
+
       </section>
     );
     const { users, loading } = this.state;
