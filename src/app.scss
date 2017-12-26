@@ -1,12 +1,250 @@
 @import "variables";
 
-body {
-  background: $main-bg;
+/* RESET START */
+*{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  color: #111;
+  font: 400  12px/1 'Helvetica Neue', sans-serif;
+  background-color: #f4f6f8;
+}
+h1, h2, h3, h4, h5, h6, p{
   margin: 0;
 }
+ul, ol{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a{
+  color: #fff;
+  font-size: 16px;
+}
+a, a:hover{
+  text-decoration: none;
+}
+img{
+  max-width: 100%;
+}
+input, textarea, button{
+  outline: none;
+  border: none;
+}
+textarea{
+  resize: vertical;
+}
+button{
+  cursor: pointer;
+}
+label{
+  margin-bottom: 0;
+}
+select, select:hover{
+  color: inherit;
+  background: #fff;
+}
+option, option:hover{
+  color: inherit;
+  background: #fff;
+}
+::-webkit-input-placeholder {transition: all .3s linear;   color: rgba(255, 255, 255, .8);}
+::-moz-placeholder          {transition: all .3s linear;   color: rgba(255, 255, 255, .8);}
+:-moz-placeholder           {transition: all .3s linear;   color: rgba(255, 255, 255, .8);}
+:-ms-input-placeholder      {transition: all .3s linear;   color: rgba(255, 255, 255, .8);}
+:focus::-webkit-input-placeholder {color: transparent}
+:focus::-moz-placeholder          {color: transparent}
+:focus:-moz-placeholder           {color: transparent}
+:focus:-ms-input-placeholder      {color: transparent}
+/* RESET END */
+
+/* DEFAULT COMPONENT START */
 
 #app {
   display: grid;
   grid-template-rows: 100px 1fr 100px;
   min-height: 100vh;
+}
+
+.input-group {
+  position: relative;
+  + .input-group {
+    margin-top: 20px;
+  }
+}
+
+.form-control {
+  width: 100%;
+  border: 1px solid #49b871;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: transparent;
+  height: 50px;
+  border-radius: 30px;
+  padding: 0 20px 0 40px;
+  font-size: 17px;
+  transition: all .2s linear;
+  &:focus {
+    box-shadow: 0 0 10px #49b871;
+  }
+}
+
+.input-group.icon-on-input label {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 15px;
+}
+
+.checkbox-group {
+  input[type="checkbox"] {
+    display: none;
+  }
+  label {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    user-select: none;
+  }
+  input[type="checkbox"] {
+    + label::before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      margin-right: 10px;
+    }
+    &:checked + label::before {
+      content: '\f00c';
+      font-family: 'FontAwesome';
+      color: #000;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  font-size: 17px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 30px;
+  padding: 15px 50px;
+  text-align: center;
+  transition: all .2s linear;
+  &.full-width {
+    width: 100%;
+  }
+  &.btn-default {
+    background-color: #36cb6c;
+    &:hover {
+      box-shadow: 0 3px 10px #36cb6c;
+    }
+  }
+  &.btn-fb {
+    background-color: #0076c8;
+    &:hover {
+      box-shadow: 0 3px 10px #0076c8;
+    }
+  }
+  &.btn-google {
+    background-color: #dc4a38;
+    &:hover {
+      /* box-shadow: 0 3px 10px #dc4a38; */
+      box-shadow: inset 0 0 20px #000;
+    }
+  }
+  &.btn-ic {
+    font-size: 13px;
+    font-weight: 400;
+    padding: 18px 15px;
+    .fa {
+      font-size: 15px;
+      margin-right: 13px;
+    }
+  }
+}
+
+/* DEFAULT COMPONENT END */
+
+/* CUSTOM STYLE */
+
+.form-wrapper {
+  background: url('~images/1_sqRQoomeCn6hKbrS0b4TUw.jpeg') no-repeat (center / cover);
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+  box-shadow: 100vw 0 0 rgba(0, 0, 0, 0.8) inset;
+}
+
+.user-auth-form {
+  width: 100%;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  margin-bottom: 45px;
+}
+
+.checkbox-group {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+.user-auth-form form .btn {
+  margin-top: 50px;
+}
+
+.other-auth-methods {
+  margin: 50px 0;
+  .btn + .btn {
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 480px) {
+  .user-auth-form {
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 600px) {
+  .user-auth-form {
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 992px) {
+  .user-auth-form {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    max-width: 1000px;
+    form {
+      flex-basis: 50%;
+    }
+  }
+  .other-auth-methods {
+    flex-basis: 50%;
+    margin-top: 0;
+    margin-left: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-wrapper {
+    background: url('~images/flowers-laptop.jpg') no-repeat (center / cover);
+  }
 }

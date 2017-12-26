@@ -90,7 +90,15 @@ module.exports = {
 
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        use: ['file-loader', 'image-webpack-loader']
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[name].[ext]',
+              limit: 1024
+            }
+          }
+        ]
       }
     ],
   },

@@ -12,6 +12,11 @@ export const Header = ({ user, setLoginState }) => {
 
   return (
     <header className="header">
+      <div className="logo">
+        <a href="#">
+          <img src='images/logo.png' alt="Apps" />
+        </a>
+      </div>
       <Navigation user={user} />
       {user && <button onClick={onLogout}>Logout</button>}
     </header>
