@@ -1,0 +1,14 @@
+.tasks {
+  a {
+    text-decoration: none;
+  }
+
+  .done a {
+    text-decoration: line-through;
+    color: grey;
+  }
+
+  .progress a{
+    text-decoration: underline;
+  }
+}

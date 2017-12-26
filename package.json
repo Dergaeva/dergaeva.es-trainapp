@@ -1,41 +1,41 @@
 {
-  "name": "trainapp",
+  "name": "todo",
   "version": "1.0.0",
-  "description": "test project",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config webpack.config.js --open",
-    "lint": "node node_modules/eslint/bin/eslint.js src/**/**.js"
+    "start": "./node_modules/.bin/webpack-dev-server --config webpack.config.js --open",
+    "lint": "./node_modules/eslint/bin/eslint.js src/**/**.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dergaeva/dergaeva.es-trainapp.git"
+    "url": "git+https://github.com/iliatcymbal/iliatcymbal-todo.git"
   },
   "keywords": [
-    "react",
-    "todo",
-    "webpack",
-    "testing"
+    "react"
   ],
-  "author": "Dergaeva",
+  "author": "Ilia Tcymbal",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Dergaeva/dergaeva.es-trainapp/issues"
+    "url": "https://github.com/iliatcymbal/iliatcymbal-todo/issues"
   },
-  "homepage": "https://github.com/Dergaeva/dergaeva.es-trainapp#readme",
+  "homepage": "https://github.com/iliatcymbal/iliatcymbal-todo#readme",
   "dependencies": {
+    "jquery": "^3.2.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-modal": "^3.1.8"
+    "react-modal": "^3.1.8",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "@babel/core": "^7.0.0-beta.32",
+    "@babel/preset-env": "^7.0.0-beta.32",
+    "@babel/preset-react": "^7.0.0-beta.32",
     "babel-eslint": "^8.0.2",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^8.0.0-beta.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
     "copy-webpack-plugin": "^4.2.3",
     "css-loader": "^0.28.7",
     "eslint": "^4.12.0",
@@ -46,9 +46,7 @@
     "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^2.30.1",
-    "jquery": "^3.2.1",
     "node-sass": "^4.7.1",
-    "react-router-dom": "^4.2.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "webpack": "^3.8.1",

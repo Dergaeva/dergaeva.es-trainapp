@@ -10,4 +10,3 @@ const Root = (
 );
 
 ReactDom.render(Root, document.getElementById('app'));
-ReactDom.render(Root, document.getElementById('app'));

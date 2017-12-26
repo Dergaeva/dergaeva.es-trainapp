@@ -1,8 +1,7 @@
-import { Header } from './partials/header';
-import { Footer } from './partials/footer';
-import { Pages } from './pages';
+import { Header } from 'partials/header';
+import { Footer } from 'partials/footer';
+import { Pages } from 'pages';
 import { checkUser } from 'services/userService';
-
 import './app.scss';
 
 export class App extends Component {
@@ -17,18 +16,18 @@ export class App extends Component {
   componentDidMount() {
     checkUser()
       .then(user => this.setLoginState(user))
-      .catch(() => this.setLoginState(false))
+      .catch(() => this.setLoginState(false));
   }
 
   setLoginState = (user) => {
     this.setState({ user });
-  };
+  }
 
   render() {
     const { user } = this.state;
 
     return (
-      <div className="wrapper">
+      <React.Fragment>
         <Header
           user={user}
           setLoginState={this.setLoginState}
@@ -36,13 +35,15 @@ export class App extends Component {
 
         {
           user !== null ?
-          <Pages
-            user={user}
-            setLoginState={this.setLoginState}
-          /> : <div>Loading ... </div>
+            <Pages
+              user={user}
+              setLoginState={this.setLoginState}
+            /> : <div>Loading...</div>
         }
+
+
         <Footer />
-      </div>
+      </React.Fragment>
     );
   }
 }
