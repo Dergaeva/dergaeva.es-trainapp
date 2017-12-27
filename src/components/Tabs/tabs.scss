@@ -5,23 +5,23 @@
     ul {
       display: flex;
       list-style: none;
-      margin: 0;
       padding: 0;
-      background: #659cff;
+      background: #36cb6c;
       border-radius: $base-border-rad;
       overflow: hidden;
-
+      justify-content: space-between;
+      margin-bottom: 30px;
       li {
         &.active a {
           background: #aaa;
         }
 
       }
-
       a {
         display: block;
         padding: 7px 10px;
         text-decoration: none;
+        font-size: 20px;
       }
     }
   }
@@ -33,5 +33,12 @@
     .active {
       opacity: 1;
     }
+  }
+}
+
+.tasks {
+  li {
+    font-size: 18px;
+    padding: 5px 0;
   }
 }

@@ -78,16 +78,23 @@ module.exports = {
         test: /\.s?css$/,
         use: textPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', {
-            loader: 'sass-loader',
-            options: {
-              includePaths: ['src']
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                includePaths: ['src'],
+                sourceMap: true
+              }
             }
-          }]
+          ]
         })
-
       },
-
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [

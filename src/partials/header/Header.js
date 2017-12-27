@@ -18,7 +18,7 @@ export const Header = ({ user, setLoginState }) => {
         </a>
       </div>
       <Navigation user={user} />
-      {user && <button onClick={onLogout}>Logout</button>}
+      {user && <button className="btn btn-default" onClick={onLogout}>Logout</button>}
     </header>
   );
 };

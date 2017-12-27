@@ -105,6 +105,7 @@ export class Form extends Component {
     const { disabled } = props;
 
     return (
+      <div className="user-auth-form">
       <form
         className="user"
         onSubmit={this.saveUser}
@@ -113,11 +114,12 @@ export class Form extends Component {
           {fields
             .filter(this.filterExcluded)
             .map((field, index) => (
-              <li key={field.label}>
+              <li className="input-group icon-on-input" key={field.label}>
                 <input
                   type={field.secure ? 'password' : 'text'}
                   name={field.label}
-                  className={Form.getValidClass(state[field.label].error)}
+
+                  className={`${Form.getValidClass(state[field.label].error)} form-control`}
                   placeholder={field.label.toUpperCase()}
                   value={state[field.label].value}
                   disabled={disabled.includes(field.label)}
@@ -130,11 +132,13 @@ export class Form extends Component {
         </ul>
 
         <input
+          className="btn btn-default full-width"
           type="submit"
           value="Ok"
           disabled={this.getDisabledState()}
         />
       </form>
+      </div>
     );
   }
 }

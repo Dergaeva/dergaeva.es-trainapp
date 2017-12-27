@@ -62,10 +62,13 @@ option, option:hover{
 /* RESET END */
 
 /* DEFAULT COMPONENT START */
-
+h1 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
 #app {
   display: grid;
-  grid-template-rows: 100px 1fr 100px;
+  grid-template-rows: 200px 1fr 100px;
   min-height: 100vh;
 }
 
@@ -91,15 +94,24 @@ option, option:hover{
   }
 }
 
-.input-group.icon-on-input label {
-  position: absolute;
-  top: 50%;
-  left: 18px;
-  transform: translateY(-50%);
-  color: #fff;
-  font-size: 15px;
+.input-group.icon-on-input {
+  //label {
+  //  position: absolute;
+  //  top: 50%;
+  //  left: 18px;
+  //  transform: translateY(-50%);
+  //  color: #fff;
+  //  font-size: 15px;
+  //}
+  span {
+    position: absolute;
+    color: #fff;
+    font-size: 16px;
+    top: 110%;
+    left: 40px;
+    background: red;
+  }
 }
-
 .checkbox-group {
   input[type="checkbox"] {
     display: none;
@@ -194,7 +206,7 @@ option, option:hover{
 }
 
 .logo {
-  margin-bottom: 45px;
+  margin: 45px auto;
 }
 
 .checkbox-group {
