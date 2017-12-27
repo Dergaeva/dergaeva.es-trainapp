@@ -71,7 +71,9 @@ h1 {
   grid-template-rows: 200px 1fr 100px;
   min-height: 100vh;
 }
-
+.form-wrapper {
+  background: url('~images/flowers-laptop.jpg') no-repeat (center / cover);
+}
 .input-group {
   position: relative;
   + .input-group {
@@ -255,8 +257,4 @@ h1 {
   }
 }
 
-@media (min-width: 1200px) {
-  .form-wrapper {
-    background: url('~images/flowers-laptop.jpg') no-repeat (center / cover);
-  }
-}
+
