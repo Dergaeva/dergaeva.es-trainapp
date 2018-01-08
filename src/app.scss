@@ -69,7 +69,8 @@ h1 {
 #app {
   display: grid;
   grid-template-rows: 200px 1fr 100px;
-  min-height: 100vh;
+  min-height: 850px;
+  height: 120vh;
 }
 .form-wrapper {
   background: url('~images/flowers-laptop.jpg') no-repeat (center / cover);
