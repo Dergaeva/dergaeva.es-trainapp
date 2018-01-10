@@ -67,7 +67,7 @@ export class TaskList extends Component {
             <Tab key={day}>
               <Tablink title={day} />
               <TabContent>
-                <ul className="tasks"> {
+                <ol className="tasks"> {
                   tasks.length &&
                   tasks[indexDay].map((task, taskIndex) => (
                     <li
@@ -81,17 +81,19 @@ export class TaskList extends Component {
                       {
                         !task.done &&
                         <React.Fragment>
-                          <span onClick={() => this.removeTask(indexDay, taskIndex)}>X</span>
-                          <span onClick={() => this.setTaskState(task, true)}>\/</span>
-                          <span onClick={() => this.setTaskState(task, false)}>~</span>
+                          <div className="status">
+                          <span className="btn-push" onClick={() => this.removeTask(indexDay, taskIndex)}>X</span>
+                          <span className="btn-push" onClick={() => this.setTaskState(task, true)}>\/</span>
+                          <span className="btn-push" onClick={() => this.setTaskState(task, false)}>~</span>
+                          </div>
                         </React.Fragment>
                       }
 
                     </li>
                   ))}
-                </ul>
+                </ol>
 
-                <Link to={`/tasks/new?day=${indexDay}`}>Add new</Link>
+                <Link className="btn btn-white" to={`/tasks/new?day=${indexDay}`}>Add new</Link>
               </TabContent>
             </Tab>
           ))
