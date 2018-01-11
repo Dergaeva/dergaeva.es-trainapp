@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Tabs, Tablink, Tab, TabContent } from 'components/Tabs/index';
 import { getTasks, updateTask, removeTask } from 'services/tasksService';
-import { addTodo, removeTodo } from 'store';
+import { addTodo, removeTodo, inprogressTask } from 'store';
 
 import './tasklist.scss';
 
@@ -34,16 +34,18 @@ export class TaskListComponent extends Component {
       })
       /* eslint no-console: ["error", { allow: ["log"] }] */
       .catch(console.log);
-  }
+  };
 
-  setTaskState = (task, doneState) => {
+  setTaskState = (indexDay, taskIndex, task) => {
     // doneState: undefined | true | false
-    task.done = doneState;
+    //task.done = doneState;
     updateTask(task.id, task)
-      .then(() => this.setState({ tasks: [...this.state.tasks] }))
+      .then(() => {
+        this.props.inprogressTask({ day: indexDay, index: taskIndex, task: done })
+      })
       /* eslint no-console: ["error", { allow: ["log"] }] */
       .catch(console.log);
-  }
+  };
 
   getClassName(task) {
     if (task.done) {
@@ -110,7 +112,8 @@ const mapState = ({ tasks }) => ({ tasks });
 
 const mapDispatch = {
   addTodo,
-  removeTodo
+  removeTodo,
+  inprogressTask
 };
 
-export const TaskList = connect(mapState, mapDispatch)(TaskListComponent)
+export const TaskList = connect(mapState, mapDispatch)(TaskListComponent);

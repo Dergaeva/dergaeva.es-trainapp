@@ -1,4 +1,4 @@
-import { ADD_TASK, REMOVE_TASK, SET_USER, SET_INFO } from './actions';
+import { ADD_TASK, REMOVE_TASK, INPROGRESS_TASK, SET_USER, SET_INFO } from './actions';
 
 export const tasks = (state = [], action) => {
   switch (action.type) {
@@ -10,6 +10,14 @@ export const tasks = (state = [], action) => {
       const tasks = state[day];
       const newtasks = tasks.filter((el, number) => number !== index);
       state[day] = newtasks;
+
+      return [...state];
+    }
+    case INPROGRESS_TASK: {
+      const { day } = action.payload;
+      const tasks = state[day];
+      const donetask = tasks.filter((el, number) => number.add("done"));
+      state[day] = donetask;
 
       return [...state];
     }
