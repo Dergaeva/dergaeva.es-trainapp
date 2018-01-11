@@ -57,5 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+#add 'node_modules'
+node_modules
+
 dist/
 package-lock.json
