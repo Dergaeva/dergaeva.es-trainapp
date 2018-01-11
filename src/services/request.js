@@ -1,12 +1,13 @@
 const BASE_URL = 'http://localhost:8081/';
 
-export const request = (url = '', type = 'get', data = null) => {
+export const request = (url = '', type = 'get', obj = null) => {
   const types = ['post', 'put'];
   let contentType = 'application/x-www-form-urlencoded; charset=UTF-8';
+  let data = obj;
 
-  if (types.includes(type) && data) {
+  if (types.includes(type) && obj) {
     contentType = 'application/json; charset=utf-8';
-    data = JSON.stringify(data);
+    data = JSON.stringify(obj);
   }
 
   return $.ajax({

@@ -1,19 +1,20 @@
 import ReactModal from 'react-modal';
+import { connect } from 'react-redux';
 import { getTasksInfo } from 'services/tasksService';
+import { setInfo } from 'store';
 import './main.scss';
 
-export class Main extends React.Component {
+export class MainComponent extends React.Component {
   constructor() {
     super();
     this.state = {
       openModal: false,
-      info: null
     };
   }
 
   componentDidMount() {
     getTasksInfo()
-      .then(info => this.setState({ info }));
+      .then(this.props.setInfo);
   }
 
   updateModal(isOpen) {
@@ -21,19 +22,19 @@ export class Main extends React.Component {
   }
 
   render() {
-    const { info } = this.state;
+    const { user, info } = this.props;
 
     return (
       <main className="main">
-        <h1>Hello, {this.props.name}</h1>
+        <h1>Hello, {user.firstName}</h1>
 
         {
           info &&
           <article>
-            <p>You have {info.total} tasks</p>
-            <p>Well done: {info.done}</p>
-            <p>In progress: {info.inProgress}</p>
-            <p>Waiting: {info.waiting}</p>
+            <p>You have <strong>{info.total}</strong> tasks</p>
+            <p>Done: <strong>{info.done}</strong></p>
+            <p>In progress: <strong>{info.inProgress}</strong></p>
+            <p>Waiting: <strong>{info.waiting}</strong></p>
           </article>
         }
 
@@ -50,3 +51,14 @@ export class Main extends React.Component {
     );
   }
 }
+
+const mapState = ({ user, info }) => ({
+  user,
+  info
+});
+
+const mapDispatch = {
+  setInfo
+};
+
+export const Main = connect(mapState, mapDispatch)(MainComponent);

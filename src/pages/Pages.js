@@ -32,12 +32,10 @@ export const Pages = ({ user, setLoginState }) => {
     );
   }
 
-  const main = () => <Main name={user.firstName} />;
-
   return (
     <Switch>
-      <Route path="/" exact component={main} />
-      <Route path="/home" exact component={main} />
+      <Route path="/" exact component={Main} />
+      <Route path="/home" exact component={Main} />
       <Route path="/tasks" exact component={TaskList} />
       <Route path="/tasks/:task" component={Task} />
       <Route path="/user" render={() => <UpdateUser user={user} />} />

@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { Header } from 'partials/header';
 import { Footer } from 'partials/footer';
 import { Pages } from 'pages';
@@ -13,12 +14,12 @@ export class AppComponent extends Component {
 
   componentDidMount() {
     checkUser()
-      .then(user => this.setLoginState(user))
+      .then(this.setLoginState)
       .catch(() => this.setLoginState(false));
   }
 
   setLoginState = (user) => {
-    this.setState({ user });
+    this.props.setUser(user);
   }
 
   render() {
@@ -49,9 +50,11 @@ export class AppComponent extends Component {
 const mapState = ({ user })=> ({
   user
 });
-const mapDispatch = ({ dispatch })=> ({
-  setUser() {dispatch(setUser)}
+const mapDispatch = (dispatch)=> ({
+  setUser(user) {
+    dispatch(setUser(user));
+  }
 });
 
-export const App = connect()(AppComponent);
+export const App = withRouter(connect(mapState, mapDispatch)(AppComponent));
 

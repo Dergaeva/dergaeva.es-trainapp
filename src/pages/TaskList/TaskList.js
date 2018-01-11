@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Tabs, Tablink, Tab, TabContent } from 'components/Tabs/index';
 import { getTasks, updateTask, removeTask } from 'services/tasksService';
+import { addTodo, removeTodo } from 'store';
 
 import './tasklist.scss';
 
-const days = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Cб'];
+const days = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Cб', 'Вс'];
 
-export class TaskList extends Component {
+export class TaskListComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -17,19 +19,18 @@ export class TaskList extends Component {
 
   componentDidMount() {
     getTasks()
-      .then(tasks => this.setState({ tasks }))
+      .then(tasks => this.props.addTodo(tasks))
       /* eslint no-console: ["error", { allow: ["log"] }] */
       .catch(console.log);
   }
 
   removeTask = (indexDay, taskIndex) => {
-    const tasks = this.state.tasks[indexDay];
+    const tasks = this.props.tasks[indexDay];
     const task = tasks[taskIndex];
 
     removeTask(task.id)
       .then(() => {
-        tasks.splice(taskIndex, 1);
-        this.setState({ tasks: [...this.state.tasks] });
+        this.props.removeTodo({ day: indexDay, index: taskIndex });
       })
       /* eslint no-console: ["error", { allow: ["log"] }] */
       .catch(console.log);
@@ -57,7 +58,7 @@ export class TaskList extends Component {
   }
 
   render() {
-    const { tasks } = this.state;
+    const { tasks } = this.props;
 
     return (
       <Tabs>
@@ -104,3 +105,12 @@ export class TaskList extends Component {
     );
   }
 }
+
+const mapState = ({ tasks }) => ({ tasks });
+
+const mapDispatch = {
+  addTodo,
+  removeTodo
+};
+
+export const TaskList = connect(mapState, mapDispatch)(TaskListComponent)
