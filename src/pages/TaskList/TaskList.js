@@ -36,12 +36,12 @@ export class TaskListComponent extends Component {
       .catch(console.log);
   };
 
-  setTaskState = (indexDay, taskIndex, task) => {
+  setTaskState = (task, done) => {
     // doneState: undefined | true | false
-    //task.done = doneState;
+    task.done = done;
     updateTask(task.id, task)
       .then(() => {
-        this.props.inprogressTask({ day: indexDay, index: taskIndex, task: done })
+        this.props.inprogressTask({ task })
       })
       /* eslint no-console: ["error", { allow: ["log"] }] */
       .catch(console.log);

@@ -14,12 +14,7 @@ export const tasks = (state = [], action) => {
       return [...state];
     }
     case INPROGRESS_TASK: {
-      const { day } = action.payload;
-      const tasks = state[day];
-      const donetask = tasks.filter((el, number) => number.add("done"));
-      state[day] = donetask;
-
-      return [...state];
+      return [...state, ...action.payload];
     }
   }
 
